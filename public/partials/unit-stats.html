@@ -1,0 +1,16 @@
+<div id="stats">
+	<div ng-if="data.object_temp > data.temperature" id="temperature">
+		<div ng-if="data.object_temp" id="object_temp" ng-style="{ height: data.object_temp + '%' }">{{ data.object_temp }}&deg;C</div>
+		<div ng-if="data.temperature" id="ambient" ng-style="{ height: data.temperature + '%' }">{{ data.temperature }}&deg;C</div>
+	</div>
+	<div ng-if="data.object_temp <= data.temperature" id="temperature">
+		<div ng-if="data.temperature" id="ambient" ng-style="{ height: data.temperature + '%' }">{{ data.temperature }}&deg;C</div>
+		<div ng-if="data.object_temp" id="object_temp" ng-style="{ height: data.object_temp + '%' }">{{ data.object_temp }}&deg;C</div>
+	</div>
+	
+	<div id="altitude" ng-if="data.altitude">{{ data.altitude }} m</div>
+	<div id="humidity" ng-if="data.humidity">{{ data.humidity }}%</div>
+	<div id="pressure" ng-if="data.pressure">{{ data.pressure }} atm</div>
+	<div id="heartrate" ng-if="data.heartrate">{{ data.heartrate }} bpm</div>
+	<div id="location" ng-if="data.location">{{ data.location[0] }}<br />{{ data.location[1] }}</div>
+</div>

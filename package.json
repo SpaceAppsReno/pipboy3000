@@ -1,0 +1,17 @@
+{
+  "name": "application-name",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "node ./bin/www"
+  },
+  "dependencies": {
+    "express": "4.0.x",
+    "static-favicon": "1.0.x",
+    "morgan": "1.0.x",
+    "cookie-parser": "1.0.x",
+    "body-parser": "1.0.x",
+    "debug": "0.7.x",
+    "ws": "~0.4.31"
+  }
+}

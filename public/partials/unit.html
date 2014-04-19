@@ -1,0 +1,15 @@
+<ul id="pages">
+	<li ng-repeat="page in Unit.pages" ng-class="{ selected: page.slug === Unit.page.slug }"><a href="#!/unit/{{ Unit.unit.slug }}/{{ page.slug }}">{{ page.label }}</a></li>
+</ul><div id="page" ng-include="'partials/unit-' + Unit.page.slug + '.html'"></div>
+
+<div id="footer">
+	<a id="home" href="#!/">Home</a><!--
+	--><div id="tray">
+		<div class="planet">{{ Unit.unit.planet }}</div>
+		<div class="name">{{ Unit.unit.name }}</div>
+		<div class="search">
+			<input ng-model="query" type="text" x-webkit-speech>
+			<div id="go" ng-click="search(query)">Go</div>
+		</div>
+	</div>
+</div>

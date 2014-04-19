@@ -1,0 +1,143 @@
+@font-face
+{
+	font-family: "MonoFonto";
+	src: url("monofonto.woff") format("woff");
+}
+
+html
+{
+	width: 100%;
+	height: 100%;
+	background: repeat fixed 50% 50% transparent;
+	background-image: -webkit-radial-gradient(center center, ellipse contain, rgba(255,255,255, .2), rgba(0,0,0, .2)), url("../images/bg.png");
+}
+
+body
+{
+	position: relative;
+	width: calc(100% - 2em);
+	height: calc(100% - 2em);
+	margin: 0;
+	padding: 1em;
+	font: 32px/1.5em MonoFonto;
+	overflow: hidden;
+}
+
+body, body a { color: #00ff06; text-decoration: none; }
+
+ul#navigation { margin: 0; padding: 0; list-style: none; text-transform: uppercase; }
+ul#navigation li { border: .25em solid #00ff06; display: inline-block; padding-bottom: .25em; }
+ul#navigation li:first-child { border-bottom-width: 0; }
+ul#navigation li:not(:first-child) { border-left-width: 0; margin-left: .25em; }
+ul#navigation li:not(:first-child):not(.selected) { border-bottom-width: 0; }
+ul#navigation li:not(:first-child).selected { padding-bottom: 0; }
+ul#navigation li a { display: block; padding: 0 1em; }
+
+ul#pages { margin: 0; margin-top: 1em; padding: 0; list-style: none; display: inline-block; text-transform: uppercase; }
+ul#pages li { border: .25em solid transparent; }
+ul#pages li.selected { border-color: #00ff06; }
+ul#pages li a { padding: 0 1em; display: block; }
+
+ul#navigation li:first-child a, ul#pages li a, #footer #home { width: 3em; }
+
+#footer
+{
+	position: absolute;
+	margin: 1em;
+	left: 0; right: 0; bottom: 0;
+}
+
+#footer #home { border: .25em solid #00ff06; padding: 0 1em; display: inline-block; vertical-align: bottom; text-transform: uppercase; }
+
+#footer #tray
+{
+	border: .25em solid #00ff06;
+	border-top-width: 0;
+	display: inline-block;
+	width: calc(100% - 7.25em);
+	margin-left: .25em;
+	vertical-align: bottom;
+	padding: .25em .5em 0;
+}
+
+#footer #tray > div { float: right; padding: 0 .5em; }
+#footer #tray .planet:before, #footer #tray .name:before, #footer #tray .search:before, #footer #tray .search #go
+{ text-transform: uppercase; vertical-align: middle; }
+#footer #tray .planet:before { content: "Planet: "; }
+#footer #tray .name:before { content: "Name: "; }
+#footer #tray .search:before { content: "Search: "; }
+#footer #tray .search input { vertical-align: middle; font-size: 85%; color: #00ff06; background: none; border: none; outline: none; }
+#footer #tray .search #go { display: inline-block; }
+
+
+#content { height: calc(100% - 4.5em); margin: .25em 0; }
+#content > div { vertical-align: top; }
+
+#page
+{
+	position: relative;
+	display: inline-block;
+	width: calc(100% - 5.75em);
+	height: 100%;
+	margin-left: .25em;
+}
+
+/* Pages */
+
+ul#units { margin: 0; padding: 0; }
+ul#units li { border: .25em solid #00ff06; display: inline-block; margin: .125em; }
+ul#units li a
+{
+	display: block;
+	width: 7em;
+	padding-top: 6.5em;
+	height: 1.5em;
+	text-align: center;
+	background: url("../images/figure.png") no-repeat scroll top transparent;
+	background-size: contain;
+}
+
+#stats
+{
+	position: absolute;
+	top: 0%; bottom: 0%;
+	left: 0%; right: 0%;
+	background: url("../images/figure.png") no-repeat scroll top transparent;
+	background-size: contain;
+}
+
+#stats > div { position: absolute; font-size: 150%; right: 0%; text-align: right; }
+#stats #altitude { top: 0%; }
+#stats #pressure { top: 20%; }
+#stats #humidity { top: 40%; }
+#stats #heartrate { top: 60%; }
+#stats #location { top: 80%; }
+
+#stats #temperature
+{
+	top: 0%; bottom: 0%;
+	left: 0%; right: auto;
+	width: 15%;
+	background: url("../images/temperature.png") no-repeat scroll bottom transparent;
+	background-size: 100% auto;
+}
+
+#stats #temperature div
+{
+	position: absolute;
+	bottom: 0;
+	left: 0; right: 0;
+	background: url("../images/temperature-full.png") no-repeat scroll bottom transparent;
+	background-size: 100% auto;
+	text-indent: 3.5em;
+}
+
+#stats #temperature :nth-child(1) { background-image: url("../images/temperature-half.png"); }
+
+#map
+{
+	border: .25em solid #00ff06;
+	position: absolute;
+	top: 0%; bottom: 0%;
+	left: 0%; right: 0%;
+}
